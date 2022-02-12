@@ -1,0 +1,9 @@
+AVaRICE will need some permissions to access certain features of usb devices (such as the Atmel-ICE).
+
+One approach is to run ./avarice as the root user. However, for the more security conscious, you may want to install a custom udev rules file like 42-atmel_usb.rules
+
+sudo 42-atmel_usb.rules /etc/udev/rules.d
+(then "sudo udevadm control --reload" or just reboot)
+
+Without suitable permissions, avarice may be unable to detect the Atmel-ICE device correctly when plugged in.
+

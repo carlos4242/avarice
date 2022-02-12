@@ -1,0 +1,23 @@
+# Atmel VID: 03eb
+# Atmel AVR ISP mkII:      PID 2104
+# Atmel AVR JTAG ICE mkII: PID 2103
+# Atmel STK600:            PID 2106
+# Atmel AVR DRAGON:        PID 2107
+# Atmel JTAGICE3:          PID 2110
+#
+# By matching any PID, any Atmel product will be recognized, leaving
+# room e.g. for software USB implementations
+SUBSYSTEM=="usb", ATTR{idVendor}=="03eb", GROUP="plugdev", MODE="0660"
+KERNEL=="hidraw*", ATTRS{idVendor}=="03eb", GROUP="plugdev", MODE="0660"
+
+# Atmel SAM-ICE (aka. Segger J-Link)
+SUBSYSTEM=="usb", ATTR{idVendor}=="1366", ATTR{idProduct}=="0101", GROUP="plugdev", MODE="0660"
+
+# USBtinyISP (3rd party programmer)
+SUBSYSTEM=="usb", ATTR{idVendor}=="1781", ATTR{idProduct}=="0c9f", GROUP="plugdev", MODE="0660"
+
+# USBasp
+SUBSYSTEM=="usb", ATTR{idVendor}=="16c0", ATTR{idProduct}=="05dc", GROUP="plugdev", MODE="0660"
+
+# FT2232
+SUBSYSTEM=="usb", ATTR{idVendor}=="0403", ATTR{idProduct}=="6010", GROUP="plugdev", MODE="0660"

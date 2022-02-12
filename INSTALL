@@ -4,3 +4,14 @@ make
 
 To install:
 make install
+
+note: on linux machines, if you want to support the Atmel-ICE, you will need libusb and libhidapi headers
+how you get them may vary per distribution, an example might be:
+sudo apt install libusb-dev
+sudo apt install  libhidapi-dev
+make sure you do this before you run ./configure
+
+also, if ./configure does not work, you may need to install autoconf, then run
+autoconf
+
+before running ./configure

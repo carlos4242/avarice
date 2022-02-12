@@ -49,6 +49,10 @@ This is a rough guide since it only documents changes already performed. So far 
 		- function `jtag3::jtagRead` maps an internal address to actual address space & address which will be requested from the device. For the signature address space, the exact address of the signature row must also be sent. This is fixed at 0 for other JTAGs.
 		- function `jtag3::memorySpace` does the mapping of address to address space and it must be ensured that from both this function and `jtag3::jtagRead` the output is always an address and address space which is known under the protocol. For UPDI, the default address was incorrectly set to SPM (which doesn't exist) instead of Flash.
 
+### Permissions
+
+When running avarice on Linux, refer to PERMISSIONS for important information regarding permissions for some devices.
+
 Forked from latest sources at [AVaRICE Project](http://avarice.sourceforge.net/).
 
 Thanks to all the contributors for helping extend the list of supported devices!
