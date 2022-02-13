@@ -9,9 +9,24 @@ note: on linux machines, if you want to support the Atmel-ICE, you will need lib
 how you get them may vary per distribution, an example might be:
 sudo apt install libusb-dev
 sudo apt install  libhidapi-dev
+
+On a raspberry pi running rasbian, all you need is:
+sudo apt install libhidapi-dev
+
+
 make sure you do this before you run ./configure
 
 also, if ./configure does not work, you may need to install autoconf, then run
 autoconf
 
 before running ./configure
+
+NOTE: for reasons I don't get, exceptions thrown in the code are not reported with their error messages on the
+command line, so for example, if you compile without libhidapi support, the program will build then seemingly
+silently fail if you pass switch -4 or --edbg. The true error message "EDBG/CMSIS-DAP devices require libhidapi support"
+has somehow been lost and your only clue is an ambiguous exit code 1 instead of 0.
+
+
+Until this issue is fixed, you'll basically get error code 1 for everything with little clue why.
+If you have an atmel-ice plugged in it should attempt to work, as long as libhidapi is installed.
+
