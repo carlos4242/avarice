@@ -30,3 +30,7 @@ has somehow been lost and your only clue is an ambiguous exit code 1 instead of 
 Until this issue is fixed, you'll basically get error code 1 for everything with little clue why.
 If you have an atmel-ice plugged in it should attempt to work, as long as libhidapi is installed.
 
+
+UPDATE: Above issue corrected with a patch on main.cc.
+Now jtag exceptions will show their error message and the status code on exit will be a characteristic 10 instead of 1.
+
